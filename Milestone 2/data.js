@@ -123,14 +123,14 @@ const animals = objects.filter((icon) =>{
 	return false;
 });
 
-const vegetable = objects.filter((icon) =>{
+const vegetables = objects.filter((icon) =>{
 	if(icon.type === 'vegetable'){
 		return true;
 	}
 	return false;
 });
 
-const user = objects.filter((icon) =>{
+const users = objects.filter((icon) =>{
 	if(icon.type === 'user'){
 		return true;
 	}
@@ -138,23 +138,10 @@ const user = objects.filter((icon) =>{
 });
 
 console.log(animals);
-console.log(vegetable);
-console.log(user);
+console.log(vegetables);
+console.log(users);
 
-objects.forEach((element) =>
-		{
-			container.innerHTML += `
-			<div class="gp-card rounded-3 shadow m-2">
-				   <div class="d-flex justify-content-center align-items-center py-3">
-						<i class="${element.family} ${element.prefix}${element.name} gp-${element.color} gp-icon"></i>
-				   </div>
-				   <div class="d-flex justify-content-center align-items-center py-2">
-						<h5 class="fw-bold text-uppercase">${element.name}</h5>
-				   </div>
-			   </div>
-			`
-		
-		});
+addHtml(objects);
 
 typeSelect.onchange = (event) => {
 	let inputText = event.target.value;
@@ -162,70 +149,35 @@ typeSelect.onchange = (event) => {
 
 	if(inputText == 1){
 		container.innerHTML ='';
-		objects.forEach((element) =>
-		{
-			container.innerHTML += `
-			<div class="gp-card rounded-3 shadow m-2">
-				   <div class="d-flex justify-content-center align-items-center py-3">
-						<i class="${element.family} ${element.prefix}${element.name} gp-${element.color} gp-icon"></i>
-				   </div>
-				   <div class="d-flex justify-content-center align-items-center py-2">
-						<h5 class="fw-bold text-uppercase">${element.name}</h5>
-				   </div>
-			   </div>
-			`
-		
-		});
+		addHtml(objects);
 	}else if(inputText == 2){
 		container.innerHTML ='';
-		animals.forEach((element) =>
-		{
-			container.innerHTML += `
-			<div class="gp-card rounded-3 shadow m-2">
-				   <div class="d-flex justify-content-center align-items-center py-3">
-						<i class="${element.family} ${element.prefix}${element.name} gp-${element.color} gp-icon"></i>
-				   </div>
-				   <div class="d-flex justify-content-center align-items-center py-2">
-						<h5 class="fw-bold text-uppercase">${element.name}</h5>
-				   </div>
-			   </div>
-			`
-		
-		});
+		addHtml(animals);
 	}else if(inputText == 3){
 		container.innerHTML ='';
-		vegetable.forEach((element) =>
-		{
-			container.innerHTML += `
-			<div class="gp-card rounded-3 shadow m-2">
-				   <div class="d-flex justify-content-center align-items-center py-3">
-						<i class="${element.family} ${element.prefix}${element.name} gp-${element.color} gp-icon"></i>
-				   </div>
-				   <div class="d-flex justify-content-center align-items-center py-2">
-						<h5 class="fw-bold text-uppercase">${element.name}</h5>
-				   </div>
-			   </div>
-			`
-		
-		});
+		addHtml(vegetables);
 	}else if(inputText == 4){
 		container.innerHTML ='';
-		user.forEach((element) =>
-		{
-			container.innerHTML += `
-			<div class="gp-card rounded-3 shadow m-2">
-				   <div class="d-flex justify-content-center align-items-center py-3">
-						<i class="${element.family} ${element.prefix}${element.name} gp-${element.color} gp-icon"></i>
-				   </div>
-				   <div class="d-flex justify-content-center align-items-center py-2">
-						<h5 class="fw-bold text-uppercase">${element.name}</h5>
-				   </div>
-			   </div>
-			`
-		
-		});
+		addHtml(users);
 	}
 };
+
+function addHtml(item){
+	item.forEach((element) =>
+	{
+		container.innerHTML += `
+		<div class="gp-card rounded-3 shadow m-2">
+			   <div class="d-flex justify-content-center align-items-center py-3">
+					<i class="${element.family} ${element.prefix}${element.name} gp-${element.color} gp-icon"></i>
+			   </div>
+			   <div class="d-flex justify-content-center align-items-center py-2">
+					<h5 class="fw-bold text-uppercase">${element.name}</h5>
+			   </div>
+		   </div>
+		`
+	
+	});
+}
 
 
 
