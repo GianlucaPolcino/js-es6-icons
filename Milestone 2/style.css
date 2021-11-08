@@ -1,5 +1,6 @@
 .gp-title{
-    color: cadetblue;
+    color: #00abdf;
+    font-family: 'Acme', sans-serif;
 }
 
 .gp-container{
@@ -8,7 +9,7 @@
 
 .gp-container-blue{
     height: 60px;
-    background-color: cadetblue;
+    background-color: #00abdf;
 }
 
 .gp-container-main{
