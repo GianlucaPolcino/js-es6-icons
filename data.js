@@ -1,4 +1,4 @@
-[
+const animals = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,20 @@
 		color: 'blue'
 	}
 ];
+
+const container = document.querySelector('.gp-container-main');
+
+animals.forEach((element) =>
+{
+	container.innerHTML += `
+	<div class="gp-card rounded-3 shadow m-2">
+               <div class="d-flex justify-content-center align-items-center py-3">
+                    <i class="${element.family} ${element.prefix}${element.name} gp-${element.color} gp-icon"></i>
+               </div>
+               <div class="d-flex justify-content-center align-items-center py-2">
+                    <h5 class="fw-bold text-uppercase">${element.name}</h5>
+               </div>
+   </div>
+	`
+	
+})

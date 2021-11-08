@@ -1,0 +1,39 @@
+.gp-title{
+    color: cadetblue;
+}
+
+.gp-container{
+    height: 60px;
+}
+
+.gp-container-blue{
+    height: 60px;
+    background-color: cadetblue;
+}
+
+.gp-container-main{
+    background-color: lightgray;
+    min-height: 100vh;
+}
+
+.gp-card{
+    width: calc(100% / 5);
+    height: 120px;
+    background-color: white;
+}
+
+.gp-icon{
+    font-size: 50px;
+}
+
+.gp-blue{
+    color: blue;
+}
+
+.gp-orange{
+    color: orange;
+}
+
+.gp-green{
+    color: green;
+}
